@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>score_result</title>
+</head>
+<body>
+<th:block th:replace="~{fragment/menu::menuFragment}"></th:block>
+<!--dto를 보내서 멤버로 접근하는 방법도 있음 dto.name-->
+    <h1 th:text="${name}"></h1>
+    <h1 th:text="${kor}"></h1>
+    <h1 th:text="${eng}"></h1>
+    <h1 th:text="${math}"></h1>
+    <h1 th:text="${sum}"></h1>
+    <h1 th:text="${avg}"></h1>
+</body>
+</html>

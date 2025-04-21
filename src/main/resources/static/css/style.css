@@ -1,0 +1,16 @@
+.menu {
+    text-decoration-line: none;
+    color: gray;
+}
+
+.menu:hover {
+    color: black;
+}
+
+.menu-div {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    background-color: #eeee;
+    padding: 15px 2px;
+}

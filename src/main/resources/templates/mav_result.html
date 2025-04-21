@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mav_result</title>
+</head>
+<body>
+  <th:block th:replace="~{fragment/menu::menuFragment}"></th:block>
+<!--  문자열과 변수 같이 사용하기 -->
+  <h1 th:text="| 이름 : ${item} |"></h1>
+</body>
+</html>

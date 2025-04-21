@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>score_result</title>
+</head>
+<body>
+<th:block th:replace="~{fragment/menu::menuFragment}"></th:block>
+  <h1 th:text="${result}"></h1>
+
+  <div th:if="${failed}">
+    <a th:href="@{/login}">다시 로그인하기</a>
+  </div>
+</body>
+</html>
