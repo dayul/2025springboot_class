@@ -30,6 +30,7 @@ public class MemoServiceImpl implements MemoService {
 
     @Override
     public List<MemoDto> listAll() {
-        return List.of();
+//        List<MemoDto> all = memoDao.listAll();
+        return memoDao.listAll();
     }
 }

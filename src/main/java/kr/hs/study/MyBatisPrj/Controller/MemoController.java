@@ -1,5 +1,6 @@
 package kr.hs.study.MyBatisPrj.Controller;
 
+import org.springframework.ui.Model;
 import kr.hs.study.MyBatisPrj.Dao.MemoDao;
 import kr.hs.study.MyBatisPrj.Dto.MemoDto;
 import kr.hs.study.MyBatisPrj.Service.MemoService;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class MemoController {
@@ -25,6 +28,14 @@ public class MemoController {
     @PostMapping("/write_done")
     public String insert(MemoDto memoDto) {
         memoService.insert(memoDto);
+        return "memo_result";
+    }
+
+    @GetMapping("/memo/list")
+    public String listAll(Model model) {
+        List<MemoDto> allLlist = memoService.listAll();
+        model.addAttribute("data", allLlist);
+//        System.out.println("size: " + allLlist.size());
         return "memo_result";
     }
 }

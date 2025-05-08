@@ -5,6 +5,14 @@
     <title>memo result</title>
 </head>
 <body>
+<th:block th:replace="~{fragment/menu::menuFragment}"></th:block>
   <h1 th:text="'memo result'" ></h1>
+
+    <div th:each="item: ${data}">
+        <p th:text="${item.idx}"></p>
+        <p th:text="${item.writer}"></p>
+        <p th:text="${item.memo}"></p>
+        <p th:text="@{item.post_date}"></p>
+    </div>
 </body>
 </html>

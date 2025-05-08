@@ -11,4 +11,7 @@
         insert into memo(idx, writer, memo) values(memo_seq.nextval, #{writer}, #{memo})
     </insert>
 
+    <select id="listAll" resultType="kr.hs.study.MyBatisPrj.Dto.MemoDto">
+        select * from memo order by idx desc
+    </select>
 </mapper>
