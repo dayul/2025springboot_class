@@ -21,21 +21,16 @@ public class MemoController {
     private MemoService memoService;
 
     @GetMapping("/memo")
-    public String memoController() {
+    public String memoController(Model model) {
+        List<MemoDto> allLlist = memoService.listAll();
+        model.addAttribute("data", allLlist);
         return "memo";
     }
 
     @PostMapping("/write_done")
     public String insert(MemoDto memoDto) {
         memoService.insert(memoDto);
-        return "memo_result";
+        return "redirect:/memo";
     }
 
-    @GetMapping("/memo/list")
-    public String listAll(Model model) {
-        List<MemoDto> allLlist = memoService.listAll();
-        model.addAttribute("data", allLlist);
-//        System.out.println("size: " + allLlist.size());
-        return "memo_result";
-    }
 }

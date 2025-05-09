@@ -10,7 +10,7 @@
 
 <th:block th:replace="~{fragment/menu::menuFragment}"></th:block>
 
-    <a th:href="@{/memo/list}"><h1 th:text="'NOTE MEMO'"></h1></a>
+    <h1 th:text="'NOTE MEMO'"></h1>
 
     <br />
 
@@ -25,5 +25,26 @@
         </div>
         <button type="submit" class="btn btn-primary">Done</button>
     </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <table class="table table-striped">
+        <tr class="table-info">
+            <th th:text="ID"></th>
+            <th th:text="Writer"></th>
+            <th th:text="Memo"></th>
+            <th th:text="Post_date"></th>
+            <th th:text="ETC"></th>
+        </tr>
+        <tr th:each="item: ${data}">
+            <td th:text="${item.idx}"></td>
+            <td th:text="${item.writer}"></td>
+            <td th:text="${item.memo}"></td>
+            <td th:text="${item.post_date}"></td>
+            <td th:text="etc"></td>
+        </tr>
+    </table>
 </body>
 </html>
