@@ -10,7 +10,9 @@
 
 <th:block th:replace="~{fragment/menu::menuFragment}"></th:block>
 
-    <h1 th:text="'NOTE MEMO'"></h1>
+    <a th:href="@{/memo/list}"><h1 th:text="'NOTE MEMO'"></h1></a>
+
+    <br />
 
     <form action="/write_done" method="post">
         <div class="mb-3">
