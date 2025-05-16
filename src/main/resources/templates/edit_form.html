@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Memo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/memo.css}" />
+</head>
+<body>
+
+<th:block th:replace="~{fragment/menu::menuFragment}"></th:block>
+
+    <h1 th:text="'NOTE MEMO'"></h1>
+
+    <br />
+
+    <form action="/edit" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">writer</label>
+            <input hidden="hidden" th:value="${one.idx}" name="idx">
+            <input th:value="${one.writer}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="writer">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">memo</label>
+            <textarea th:text="${one.memo}" type="password" class="form-control" id="exampleInputPassword1" name="memo"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Done</button>
+    </form>
+</body>
+</html>

@@ -33,4 +33,17 @@ public class MemoController {
         return "redirect:/memo";
     }
 
+    @GetMapping("/edit/{idx}")
+    public String edit_form(@PathVariable("idx") int idx, Model model) {
+        MemoDto dto = memoService.selectOne(idx);
+        model.addAttribute("one", dto);
+        return "edit_form";
+    }
+
+    @PostMapping("/edit")
+    public String update(MemoDto memoDto) {
+        memoService.update(memoDto);
+        return "redirect:/memo";
+    }
+
 }

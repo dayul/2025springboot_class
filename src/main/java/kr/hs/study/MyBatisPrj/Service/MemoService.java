@@ -10,10 +10,13 @@ public interface MemoService {
     // 1. insert
     public void insert(MemoDto memoDto);
     // 2. update
-    public void update(int idx);
+    public void update(MemoDto memoDto);
     // 3. delete
     public void delete(int idx);
 
     // 4. select
     public List<MemoDto> listAll();
+
+    // findOne
+    public MemoDto selectOne(int idx);
 }

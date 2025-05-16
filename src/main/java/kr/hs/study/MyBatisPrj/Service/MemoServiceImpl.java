@@ -19,8 +19,8 @@ public class MemoServiceImpl implements MemoService {
     }
 
     @Override
-    public void update(int idx) {
-
+    public void update(MemoDto memoDto) {
+        memoDao.update(memoDto);
     }
 
     @Override
@@ -32,5 +32,10 @@ public class MemoServiceImpl implements MemoService {
     public List<MemoDto> listAll() {
 //        List<MemoDto> all = memoDao.listAll();
         return memoDao.listAll();
+    }
+
+    @Override
+    public MemoDto selectOne(int idx) {
+        return memoDao.selectOne(idx);
     }
 }

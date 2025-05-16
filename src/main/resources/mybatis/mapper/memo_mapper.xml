@@ -14,4 +14,12 @@
     <select id="listAll" resultType="kr.hs.study.MyBatisPrj.Dto.MemoDto">
         select * from memo order by idx desc
     </select>
+
+    <select id="selectOne" resultType="kr.hs.study.MyBatisPrj.Dto.MemoDto">
+        select * from memo where idx=#{idx}
+    </select>
+
+    <update id="update" parameterType="kr.hs.study.MyBatisPrj.Dto.MemoDto">
+        update memo set writer=#{writer}, memo=#{memo} where idx=#{idx}
+    </update>
 </mapper>
