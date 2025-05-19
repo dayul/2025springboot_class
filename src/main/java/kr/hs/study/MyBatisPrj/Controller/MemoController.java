@@ -46,4 +46,9 @@ public class MemoController {
         return "redirect:/memo";
     }
 
+    @GetMapping("/delete/{idx}")
+    public String delete(@PathVariable("idx") int idx) {
+        memoService.delete(idx);
+        return "redirect:/memo";
+    }
 }

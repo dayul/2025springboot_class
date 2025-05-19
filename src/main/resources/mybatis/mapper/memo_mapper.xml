@@ -22,4 +22,8 @@
     <update id="update" parameterType="kr.hs.study.MyBatisPrj.Dto.MemoDto">
         update memo set writer=#{writer}, memo=#{memo} where idx=#{idx}
     </update>
+
+    <delete id="delete" parameterType="int">
+        delete from memo where idx=${idx}
+    </delete>
 </mapper>

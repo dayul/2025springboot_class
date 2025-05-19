@@ -25,7 +25,7 @@ public class MemoServiceImpl implements MemoService {
 
     @Override
     public void delete(int idx) {
-
+        memoDao.delete(idx);
     }
 
     @Override
