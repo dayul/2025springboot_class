@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.study.MyBatisPrj.Dao.JoinUsDao">
+    <!--    namespace: dao가 있는 풀 패키지 (kr...)-->
+    <!--    xml이 dao와 연결된다는 것을 설정 -->
+
+    <!--id는 dao의 함수 이름-->
+    <!--parameterType은 dao의 함수 이름-->
+    <!--#{writer}, #{memo}는 dto의 멤버변수에 접근하는 것-->
+    <insert id="createUser" parameterType="kr.hs.study.MyBatisPrj.Dto.JoinUsDto">
+        insert into userinfo(idx, name, password) values(user_seq.nextval, #{name}, #{password})
+    </insert>
+</mapper>
