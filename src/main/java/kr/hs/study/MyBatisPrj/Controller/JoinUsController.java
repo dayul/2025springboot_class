@@ -21,12 +21,14 @@ public class JoinUsController {
 
     @PostMapping("/join")
     public String createUser(JoinUsDto joinUsDto, Model model) {
-        System.out.println(joinUsDto);
-        joinUsService.createUser(joinUsDto);
+        try {
+            joinUsService.createUser(joinUsDto);
+            model.addAttribute("result", "로그인 성공");
+            return "join_us_result";
 
-//        model.addAttribute("result", "로그인 실패");
-//        model.addAttribute("failed", "실패");
-
-        return "join_us_result";
+        } catch (Exception e) {
+            model.addAttribute("failed", "실패");
+            throw new RuntimeException(e);
+        }
     }
 }
