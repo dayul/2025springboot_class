@@ -17,7 +17,7 @@
     <form action="/edit" method="post">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">writer</label>
-            <input hidden="hidden" th:value="${one.idx}" name="idx">
+            <input type="hidden" th:value="${one.idx}" name="idx">
             <input th:value="${one.writer}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="writer">
         </div>
         <div class="mb-3">
